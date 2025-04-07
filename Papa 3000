@@ -1,0 +1,60 @@
+int r=11;
+int c;
+int d=1;
+int w1=3;
+int w2=5;
+int w3=6;
+int w4=9;
+int w5=10;
+int motor=2;
+const int i=2;
+
+void setup() {
+pinMode(r, OUTPUT);
+pinMode(w1, OUTPUT);
+pinMode(w2, OUTPUT);
+pinMode(w3, OUTPUT);
+pinMode(w4, OUTPUT);
+pinMode(w5, OUTPUT);
+pinMode(motor, OUTPUT);
+Serial.begin(9600);
+}
+
+void loop() {
+digitalRead(i);
+
+// if (i==HIGH){
+ digitalWrite(motor, HIGH);
+ 
+ for(c=0; c<255; c++){
+analogWrite(r, c);
+analogWrite(w3, 50);
+delay(d);
+analogWrite(w3, 0);
+}
+
+analogWrite(w5, 0);
+analogWrite(w1, 50);
+delay(50);
+analogWrite(w1, 0);
+delay(100);
+analogWrite(w2, 50);
+delay(50);
+analogWrite(w2, 0);
+delay(250);
+analogWrite(w2, 50);
+delay(50);
+analogWrite(w2, 0);
+analogWrite(w2, 50);
+delay(50);
+analogWrite(w2, 0);
+
+analogWrite(w5, 75);
+
+ for(c=255; c>0; c--){
+analogWrite(r, c);
+analogWrite(w4, 50);
+delay(d);
+analogWrite(w4, 0);}
+//}
+}
